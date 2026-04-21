@@ -65,17 +65,17 @@
             "type": "boolean"
           },
           "scale-min": {
-            "description": "定义缩放倍数最小值。起始版本：1.0.3",
+            "description": "定义缩放倍数最小值。起始版本： 1.0.3",
             "defaultValue": "0.1",
             "type": "number"
           },
           "scale-max": {
-            "description": "定义缩放倍数最大值。起始版本：1.0.3",
+            "description": "定义缩放倍数最大值。起始版本： 1.0.3",
             "defaultValue": "10",
             "type": "number"
           },
           "scale-value": {
-            "description": "定义缩放倍数，取值范围为 0.5 ~ 10。",
+            "description": "定义缩放倍数，取值范围为 0.1 ~ 10。",
             "defaultValue": "1",
             "type": "number"
           },
@@ -123,20 +123,20 @@
           "upper-threshold": {
             "description": "距顶部/左边多远时，触发 scrolltoupper 事件。",
             "defaultValue": "50",
-            "type": "number/string"
+            "type": "number|string"
           },
           "lower-threshold": {
             "description": "距底部/右边多远时，触发 scrolltolower 事件。",
             "defaultValue": "50",
-            "type": "number/string"
+            "type": "number|string"
           },
           "scroll-top": {
             "description": "设置竖向滚动条位置。",
-            "type": "number/string"
+            "type": "number|string"
           },
           "scroll-left": {
             "description": "设置横向滚动条位置。",
-            "type": "number/string"
+            "type": "number|string"
           },
           "scroll-into-view": {
             "description": "值应为某子元素id（id不能以数字开头）。设置哪个方向可滚动，则在哪个方向滚动到该元素。",
@@ -193,7 +193,7 @@
           },
           "indicator-color": {
             "description": "指示点颜色。",
-            "defaultValue": "rgba(0, 0, 0, .3)",
+            "defaultValue": "rgba(0, 0, 0, 0.3)",
             "type": "string"
           },
           "indicator-active-color": {
@@ -202,7 +202,7 @@
             "type": "string"
           },
           "current": {
-            "description": "当前所在滑块的index。起始版本：1.0.3",
+            "description": "当前所在滑块的index。起始版本： 1.0.3",
             "defaultValue": "0",
             "type": "number"
           },
@@ -247,7 +247,7 @@
             "type": "string"
           },
           "disable-touch": {
-            "description": "是否禁止用户 touch 操作。",
+            "description": "是否禁止用户touch操作。",
             "defaultValue": "false",
             "type": "boolean"
           }
@@ -262,7 +262,7 @@
         "type": "object",
         "properties": {
           "item-id": {
-            "description": "swiper-item 的标识符。",
+            "description": "swiper-item的标识符。",
             "type": "string"
           }
         },
@@ -309,9 +309,9 @@
             "type": "string"
           },
           "size": {
-            "description": "icon的大小。",
+            "description": "icon的大小，支持传入单位（rpx/px），默认单位：px。",
             "defaultValue": "23",
-            "type": "number/string"
+            "type": "number|string"
           },
           "color": {
             "description": "icon 颜色，同 CSS 色值。",
@@ -341,17 +341,17 @@
           "border-radius": {
             "description": "圆角大小。",
             "defaultValue": "0",
-            "type": "number/string"
+            "type": "number|string"
           },
           "font-size": {
             "description": "右侧百分比字体大小。",
             "defaultValue": "16",
-            "type": "number/string"
+            "type": "number|string"
           },
           "stroke-width": {
             "description": "进度条线的宽度。",
             "defaultValue": "4",
-            "type": "number/string"
+            "type": "number|string"
           },
           "color": {
             "description": "进度条进行中颜色，同activeColor。",
@@ -374,10 +374,10 @@
             "type": "boolean"
           },
           "active-mode": {
-            "description": "起始版本：1.0.3",
+            "description": "- backwards: 动画从头播放。- forwards：动画从上次结束的位置开始接续播放。起始版本： 1.0.3",
             "defaultValue": "backwards",
             "type": "string",
-            "enum": ["forwards"]
+            "enum": ["forwards", "backwards"]
           },
           "duration": {
             "description": "进度增加1%所需毫秒数。",
@@ -428,7 +428,7 @@
             "type": "boolean"
           },
           "space": {
-            "description": "以何种方式显示连续空格。有效值如下：设置非以上有效值时，组件直接显示开发者输入的空格。",
+            "description": "以何种方式显示连续空格。有效值如下：- nbsp：根据字体设置的空格大小。- ensp：中文字符空格一半大小。- emsp：中文字符空格大小。设置非以上有效值时，组件直接显示开发者输入的空格。",
             "defaultValue": "emsp",
             "type": "string",
             "enum": ["nbsp", "ensp", "emsp"]
@@ -449,13 +449,13 @@
         "type": "object",
         "properties": {
           "size": {
-            "description": "按钮的大小。有效值如下：",
+            "description": "按钮的大小。有效值如下：default：默认大小mini：小尺寸",
             "defaultValue": "default",
             "type": "string",
             "enum": ["default", "mini"]
           },
           "type": {
-            "description": "按钮的样式类型。有效值如下：",
+            "description": "按钮的样式类型。有效值如下：primary：蓝色default：白色warn：红色",
             "defaultValue": "default",
             "type": "string",
             "enum": ["primary", "default", "warn"]
@@ -476,14 +476,21 @@
             "type": "boolean"
           },
           "form-type": {
-            "description": "用于 form 组件，点击分别会触发组件的 submit/reset 事件",
+            "description": "用于 form 组件，点击分别会触发组件的 submit/reset 事件- submit：表单提交- reset：重置表单",
             "type": "string",
             "enum": ["submit", "reset"]
           },
           "open-type": {
-            "description": "元服务开放的能力，不支持初始化后修改。有效值如下：launchApp：打开应用，可以通过app-bundle-name，app-module-name，app-ability-name，app-parameters属性打开指定应用。当前只支持打开系统应用，或者在元服务跳转三方应用的场景下只能打开同系列开发者的应用，否则会遭到系统生态管控拦截，提示应用无法打开。share：触发用户分享，用户点击按钮后触发 Page.onShareAppMessage 事件，只支持分享首页。依赖关系：HarmonyOS SDK版本≥6.0.0(20) 且ROM版本 ≥ 6.0.0。",
+            "description": "元服务开放的能力，有效值详见open-type属性合法值。",
             "type": "string",
-            "enum": ["getPhoneNumber", "openSetting"]
+            "enum": [
+              "getPhoneNumber",
+              "openSetting",
+              "launchApp",
+              "share",
+              "liveActivity",
+              "getPhoneNumberAndRiskLevel"
+            ]
           },
           "hover-class": {
             "description": "指定按钮按下去的样式类。当 hover-class=\"none\" 时，没有点击态效果。",
@@ -506,20 +513,24 @@
             "type": "number"
           },
           "app-bundle-name": {
-            "description": "open-type=launchApp时有效，表示待启动Ability所在的应用Bundle名称。起始版本：1.0.6",
+            "description": "open-type=launchApp时有效，表示待启动Ability所在的应用Bundle名称。起始版本： 1.0.6",
             "type": "string"
           },
           "app-module-name": {
-            "description": "open-type=launchApp时有效，表示待启动Ability所属的模块名称。起始版本：1.0.6",
+            "description": "open-type=launchApp时有效，表示待启动Ability所属的模块名称。起始版本： 1.0.6",
             "type": "string"
           },
           "app-ability-name": {
-            "description": "open-type=launchApp时有效，表示待启动Ability名称。起始版本：1.0.6",
+            "description": "open-type=launchApp时有效，表示待启动Ability名称。起始版本： 1.0.6",
             "type": "string"
           },
           "app-parameters": {
-            "description": "open-type=launchApp时有效，表示启动Ability时的自定义参数。起始版本：1.0.6",
+            "description": "open-type=launchApp时有效，表示启动Ability时的自定义参数。起始版本： 1.0.6",
             "type": "Object"
+          },
+          "activity-type": {
+            "description": "open-type=liveActivity时有效，表示子场景ID，当open-type=liveActivity时，该参数必填。取值参考服务动态场景模板。起始版本： 1.0.20",
+            "type": "string"
           },
           "onGetPhoneNumber": {
             "description": "获取用户手机号的回调，open-type=\"getPhoneNumber\"时有效。",
@@ -530,11 +541,19 @@
             "tsType": "() => void"
           },
           "onLaunchApp": {
-            "description": "打开应用成功时的回调，open-type=launchApp时有效。起始版本：1.0.6",
+            "description": "打开应用成功时的回调，open-type=\"launchApp\"时有效。起始版本： 1.0.6",
+            "tsType": "() => void"
+          },
+          "onCreateLiveactivity": {
+            "description": "获取服务动态授权码的回调，open-type=\"liveActivity\"时有效，event.detail = { code }。起始版本： 1.0.20",
+            "tsType": "() => void"
+          },
+          "onGetPhoneNumberAndRiskLevel": {
+            "description": "获取手机号和风险等级的回调，open-type=\"getPhoneNumberAndRiskLevel\"时有效，event.detail = { code }。起始版本： 1.0.20",
             "tsType": "() => void"
           },
           "onError": {
-            "description": "当使用开放能力发生错误时的回调，open-type=launchApp时有效。起始版本：1.0.6",
+            "description": "当使用开放能力发生错误时的回调，仅在opent-type为launchApp、liveActivity或getPhoneNumberAndRiskLevel时有效，event.detail = { errCode, errMsg }。起始版本： 1.0.6",
             "tsType": "() => void"
           }
         },
@@ -577,7 +596,7 @@
         "type": "object",
         "properties": {
           "onChange": {
-            "description": "checkbox-group中选中项发生改变时触发。detail = {value:[选中的checkbox的value的数组]}。",
+            "description": "点击导致checkbox-group中选中项发生改变时触发change事件，detail = {value:[选中的checkbox的value的数组]}。",
             "tsType": "() => void"
           }
         },
@@ -591,11 +610,11 @@
         "type": "object",
         "properties": {
           "onSubmit": {
-            "description": "携带form中的数据触发submit事件，event.detail = {value : {'name': 'value'} , formId: ''}",
+            "description": "携带form中的数据触发submit事件。",
             "tsType": "() => void"
           },
           "onReset": {
-            "description": "表单重置时会触发 reset 事件",
+            "description": "表单重置时会触发reset事件。",
             "tsType": "() => void"
           }
         },
@@ -618,13 +637,13 @@
             "type": "boolean"
           },
           "type": {
-            "description": "input 的类型，有效值如下：",
+            "description": "input 的类型，有效值如下：text：文本输入键盘。number：数字输入键盘。",
             "defaultValue": "text",
             "type": "string",
             "enum": ["text", "number"]
           },
           "confirm-type": {
-            "description": "设置键盘右下角按钮的文字，confirm-type的类型，有效值如下：（仅在type='text'）时生效。",
+            "description": "设置键盘右下角按钮的文字，confirm-type的类型，有效值如下：（仅在type='text'）时生效。send：右下角按钮为发送。search：右下角按钮为搜索样式。next：右下角按钮为下一步。go：右下角按钮为开始样式。done：右下角按钮为完成。",
             "defaultValue": "done",
             "type": "string",
             "enum": ["send", "search", "next", "go", "done"]
@@ -639,7 +658,7 @@
             "type": "string"
           },
           "placeholder-style": {
-            "description": "指定placeholder的样式。起始版本：1.0.9",
+            "description": "指定placeholder的样式。起始版本： 1.0.9",
             "type": "string"
           },
           "disabled": {
@@ -653,7 +672,7 @@
             "type": "number"
           },
           "onInput": {
-            "description": "键盘输入时触发，event.detail = {value}。",
+            "description": "键盘输入时触发。",
             "tsType": "() => void"
           },
           "onFocus": {
@@ -669,7 +688,7 @@
             "tsType": "() => void"
           },
           "placeholder-class": {
-            "description": "指定placeholder的样式类。起始版本：1.0.9",
+            "description": "指定placeholder的样式类。起始版本： 1.0.9",
             "defaultValue": "input-placeholder",
             "type": "string"
           }
@@ -684,7 +703,7 @@
         "type": "object",
         "properties": {
           "for": {
-            "description": "绑定控件的id。传递非法值时依据实际效果而定。",
+            "description": "绑定控件的id。- 使用for属性找到对应的id，或者将控件放在该标签下，当点击时，就会触发对应的控件。- for优先级高于内部控件，内部有多个控件的时候默认触发第一个控件。- 目前可以绑定的控件有：button、checkbox、radio、switch。传递非法值时依据实际效果而定。",
             "type": "string"
           }
         },
@@ -698,7 +717,7 @@
         "type": "object",
         "properties": {
           "mode": {
-            "description": "选择器类型。",
+            "description": "选择器类型。selector：普通选择器multiSelector：多列选择器time：时间选择器date：日期选择器region：省市区选择器",
             "defaultValue": "selector",
             "type": "string",
             "enum": ["selector", "multiSelector", "time", "date", "region"]
@@ -762,7 +781,7 @@
         "type": "object",
         "properties": {
           "value": {
-            "description": "radio 标识。当该radio选中时，radio-group 的 change 事件会携带 radio 的 value。",
+            "description": "radio标识。当该radio选中时，radio-group的change事件会携带radio的 value。",
             "type": "string"
           },
           "checked": {
@@ -791,7 +810,7 @@
         "type": "object",
         "properties": {
           "onChange": {
-            "description": "radio-group中选中项发生改变时触发 change 事件，detail = {value:[选中的radio的value的数组]}。",
+            "description": "点击导致radio-group中选中项发生改变时触发change事件，detail = {value}。",
             "tsType": "() => void"
           }
         },
@@ -883,17 +902,17 @@
             "type": "boolean"
           },
           "type": {
-            "description": "样式，有效值：switch, checkbox。",
+            "description": "样式，有效值：switch，checkbox。",
             "defaultValue": "switch",
             "type": "string"
           },
           "color": {
-            "description": "switch 的颜色，同 css 的 color。",
+            "description": "switch 的颜色，同css的color。",
             "defaultValue": "#0A59F7",
             "type": "string"
           },
           "onChange": {
-            "description": "点击导致 checked 改变时会触发 change 事件，event.detail={ value}。",
+            "description": "点击导致checked改变时会触发change事件，event.detail={value}。",
             "tsType": "() => void"
           }
         },
@@ -911,7 +930,7 @@
             "type": "string"
           },
           "confirm-type": {
-            "description": "点击textarea拉起输入法后，输入法键盘右下角文字类型，有效值如下：",
+            "description": "点击textarea拉起输入法后，输入法键盘右下角文字类型，有效值如下：send：输入法键盘的右下角文字为“发送”。search：输入法键盘的右下角文字为“搜索”。next：输入法键盘的右下角文字为“下一步”。go：输入法键盘的右下角文字为“开始”。done：输入法键盘的右下角文字为“完成”。return：输入法键盘的右下角文字为“换行”。",
             "defaultValue": "return",
             "type": "string",
             "enum": ["send", "search", "next", "go", "done", "return"]
@@ -921,7 +940,7 @@
             "type": "string"
           },
           "focus": {
-            "description": "获取焦点。起始版本：1.0.5",
+            "description": "获取焦点。起始版本： 1.0.5",
             "defaultValue": "false",
             "type": "boolean"
           },
@@ -945,7 +964,7 @@
             "type": "boolean"
           },
           "onInput": {
-            "description": "键盘输入时触发，event.detail = {value}。",
+            "description": "键盘输入时触发。",
             "tsType": "() => void"
           },
           "onFocus": {
@@ -971,7 +990,7 @@
         "type": "object",
         "properties": {
           "target": {
-            "description": "在哪个目标上发生跳转，默认当前元服务。",
+            "description": "在哪个目标上发生跳转，默认当前元服务。- self：当前元服务",
             "defaultValue": "self",
             "type": "string",
             "enum": ["self"]
@@ -1038,7 +1057,7 @@
             "tsType": "() => void"
           },
           "lazy-load": {
-            "description": "图片懒加载，在进入视区时才开始加载。起始版本：1.0.9",
+            "description": "图片懒加载，在进入视区时才开始加载。起始版本： 1.0.9",
             "defaultValue": "false",
             "type": "boolean"
           }
@@ -1054,11 +1073,11 @@
         "type": "object",
         "properties": {
           "src": {
-            "description": "视频的数据源。",
+            "description": "视频的数据源。支持的格式有mp4，从1.0.16开始，增加支持mpeg-ts、mkv。支持网络视频地址和本地视频地址（internal://开头）。从1.0.20版本开始，支持代码包内视频地址。",
             "type": "string"
           },
           "duration": {
-            "description": "指定视频时长，单位s。起始版本：1.0.16",
+            "description": "指定视频时长，单位s。起始版本： 1.0.16",
             "type": "number"
           },
           "controls": {
@@ -1082,82 +1101,82 @@
             "type": "boolean"
           },
           "initial-time": {
-            "description": "指定视频初始播放位置，单位s。起始版本：1.0.16",
+            "description": "指定视频初始播放位置，单位s。起始版本： 1.0.16",
             "defaultValue": "0",
             "type": "number"
           },
           "object-fit": {
-            "description": "当视频大小与 video 容器大小不一致时，视频的表现形式。起始版本：1.0.3",
+            "description": "当视频大小与 video 容器大小不一致时，视频的表现形式。contain：保持宽高比进行缩小或者放大，使得视频完全显示在显示边界内。cover：保持宽高比进行缩小或者放大，使得视频两边都大于或等于显示边界。fill：不保持宽高比进行放大缩小，使得视频充满显示边界。起始版本： 1.0.3",
             "defaultValue": "contain",
             "type": "string",
             "enum": ["contain", "cover", "fill"]
           },
           "poster": {
-            "description": "视频未播放时的预览图片路径，默认显示视频第一帧，支持网络图片。poster值加载错误时：",
+            "description": "视频未播放时的预览图片路径，默认显示视频第一帧，支持网络图片。poster值加载错误时：在1.0.15及之前的版本，视频封面黑屏处理。从1.0.16开始，默认显示视频第一帧。",
             "type": "string"
           },
           "direction": {
-            "description": "设置全屏时视频的方向，不指定则根据宽高比自动判断。起始版本：1.0.16",
+            "description": "设置全屏时视频的方向，不指定则根据宽高比自动判断。0：正常竖向。90：屏幕逆时针90度。-90：屏幕顺时针90度。起始版本： 1.0.16",
             "type": "number",
             "enum": ["0", "90", "-90"]
           },
           "show-casting-button": {
-            "description": "显示投屏按钮。开始播放后才显示，只支持网络视频投屏。需要权限：开启投屏播放，需要如下配置：起始版本：1.0.16",
+            "description": "显示投屏按钮。开始播放后才显示，只支持网络视频投屏。需要权限： 开启投屏播放，需要如下配置：在module.json5中声明ohos.permission.KEEP_BACKGROUND_RUNNING权限。在module.json5中声明backgroundModes配置项。\"module\": {\"abilities\": [{\"backgroundModes\": [\"audioPlayback\"]}]}在app.json中配置requiredBackgroundModes属性。    \"requiredBackgroundModes\": [\"audio\"]起始版本： 1.0.16",
             "defaultValue": "false",
             "type": "boolean"
           },
           "show-fullscreen-btn": {
-            "description": "是否显示全屏按钮。起始版本：1.0.16",
+            "description": "是否显示全屏按钮。起始版本： 1.0.16",
             "defaultValue": "true",
             "type": "boolean"
           },
           "show-play-btn": {
-            "description": "是否显示视频底部控制栏的播放按钮。起始版本：1.0.16",
+            "description": "是否显示视频底部控制栏的播放按钮。起始版本： 1.0.16",
             "defaultValue": "true",
             "type": "boolean"
           },
           "play-btn-position": {
-            "description": "播放按钮的位置。起始版本：1.0.16",
+            "description": "播放按钮的位置。bottom：底部控制栏上。center：视频中间。起始版本： 1.0.16",
             "defaultValue": "bottom",
             "type": "string",
             "enum": ["bottom", "center"]
           },
           "title": {
-            "description": "视频的标题，全屏时在顶部展示。起始版本：1.0.16",
+            "description": "视频的标题，全屏时在顶部展示。起始版本： 1.0.16",
             "type": "string"
           },
           "show-screen-lock-button": {
-            "description": "是否显示锁屏按钮，仅在全屏时显示。起始版本：1.0.16",
+            "description": "是否显示锁屏按钮，仅在全屏时显示。起始版本： 1.0.16",
             "defaultValue": "false",
             "type": "boolean"
           },
           "enable-auto-rotation": {
-            "description": "是否开启手机横屏时自动全屏，当系统设置开启自动旋转时生效。起始版本：1.0.16",
+            "description": "是否开启手机横屏时自动全屏，当系统设置开启自动旋转时生效。起始版本： 1.0.16",
             "defaultValue": "false",
             "type": "boolean"
           },
           "enable-progress-gesture": {
-            "description": "是否开启控制进度的手势。起始版本：1.0.16",
+            "description": "是否开启控制进度的手势。起始版本： 1.0.16",
             "defaultValue": "true",
             "type": "boolean"
           },
           "vslide-gesture-in-fullscreen": {
-            "description": "在全屏模式下，是否开启亮度与音量调节手势。起始版本：1.0.16",
+            "description": "在全屏模式下，是否开启亮度与音量调节手势。起始版本： 1.0.16",
             "defaultValue": "true",
             "type": "boolean"
           },
           "vslide-gesture": {
-            "description": "在非全屏模式下，是否开启亮度与音量调节手势。起始版本：1.0.16",
+            "description": "在非全屏模式下，是否开启亮度与音量调节手势。起始版本： 1.0.16",
             "defaultValue": "false",
             "type": "boolean"
           },
           "show-mute-btn": {
-            "description": "是否显示静音按钮。起始版本：1.0.16",
+            "description": "是否显示静音按钮。起始版本： 1.0.16",
             "defaultValue": "false",
             "type": "boolean"
           },
           "enable-play-gesture": {
-            "description": "是否开启播放手势，即双击切换播放/暂停。起始版本：1.0.16",
+            "description": "是否开启播放手势，即双击切换播放/暂停。起始版本： 1.0.16",
             "defaultValue": "false",
             "type": "boolean"
           },
@@ -1174,47 +1193,47 @@
             "tsType": "() => void"
           },
           "onTimeUpdate": {
-            "description": "播放进度变化时触发，event.detail = {currentTime, duration} ，currentTime单位秒，duration单位秒。触发频率 200ms 一次。起始版本：1.0.16",
+            "description": "播放进度变化时触发，event.detail = {currentTime, duration} ，currentTime单位秒，duration单位秒。触发频率 200ms 一次。起始版本： 1.0.16",
             "tsType": "() => void"
           },
           "onFullScreenChange": {
-            "description": "视频进入和退出全屏时触发，event.detail = {fullScreen, direction}，direction 有效值为 vertical 或 horizontal。起始版本：1.0.16",
+            "description": "视频进入和退出全屏时触发，event.detail = {fullScreen, direction}，direction 有效值为 vertical 或 horizontal。起始版本： 1.0.16",
             "tsType": "() => void"
           },
           "onWaiting": {
-            "description": "视频出现缓冲时触发。起始版本：1.0.16",
+            "description": "视频出现缓冲时触发。起始版本： 1.0.16",
             "tsType": "() => void"
           },
           "onError": {
-            "description": "视频播放出错时触发。起始版本：1.0.16",
+            "description": "视频播放出错时触发。起始版本： 1.0.16",
             "tsType": "() => void"
           },
           "onProgress": {
-            "description": "加载进度变化时触发，只支持一段加载。event.detail = {buffered}，buffered为百分比。起始版本：1.0.16",
+            "description": "加载进度变化时触发，只支持一段加载。event.detail = {buffered}，buffered为百分比。起始版本： 1.0.16",
             "tsType": "() => void"
           },
           "onLoadedMetaData": {
-            "description": "视频元数据加载完成时触发。event.detail = {width, height, duration}，duration单位秒。起始版本：1.0.16",
+            "description": "视频元数据加载完成时触发。event.detail = {width, height, duration}，duration单位秒。起始版本： 1.0.16",
             "tsType": "() => void"
           },
           "onControlsToggle": {
-            "description": "切换 controls 显示隐藏时触发。event.detail = {show}。起始版本：1.0.16",
+            "description": "切换 controls 显示隐藏时触发。event.detail = {show}。起始版本： 1.0.16",
             "tsType": "() => void"
           },
           "onSeekComplete": {
-            "description": "seek 完成时触发。event.detail = {position}，position单位秒。起始版本：1.0.16",
+            "description": "seek 完成时触发。event.detail = {position}，position单位秒。起始版本： 1.0.16",
             "tsType": "() => void"
           },
           "onCastingUserSelect": {
-            "description": "用户选择投屏设备时触发 detail = { state: \"success\"/\"fail\" }。起始版本：1.0.16",
+            "description": "用户选择投屏设备时触发 detail = { state: \"success\"/\"fail\" }。起始版本： 1.0.16",
             "tsType": "() => void"
           },
           "onCastingStateChange": {
-            "description": "投屏成功/失败时触发 detail = { type, state: \"success\"/\"fail\" }，type值固定为connect。起始版本：1.0.16",
+            "description": "投屏成功/失败时触发 detail = { type, state: \"success\"/\"fail\" }，type值固定为connect。起始版本： 1.0.16",
             "tsType": "() => void"
           },
           "onCastingInterrupt": {
-            "description": "投屏被中断时触发。起始版本：1.0.16",
+            "description": "投屏被中断时触发。起始版本： 1.0.16",
             "tsType": "() => void"
           }
         },
@@ -1228,14 +1247,20 @@
         "title": "camera",
         "type": "object",
         "properties": {
+          "resolution": {
+            "description": "分辨率，不支持动态修改。low：低。medium：中。high：高。",
+            "defaultValue": "medium",
+            "type": "string",
+            "enum": ["low", "medium", "high"]
+          },
           "device-position": {
-            "description": "摄像头朝向。",
+            "description": "摄像头朝向。back：后置。front：前置。",
             "defaultValue": "back",
             "type": "string",
             "enum": ["back", "front"]
           },
           "flash": {
-            "description": "闪光灯。",
+            "description": "闪光灯。auto：自动。on：打开。off：关闭。torch：常亮。",
             "defaultValue": "auto",
             "type": "string",
             "enum": ["auto", "on", "off", "torch"]
@@ -1323,7 +1348,7 @@
         "type": "object",
         "properties": {
           "type": {
-            "description": "canvas类型，支持 2d",
+            "description": "canvas类型，支持2d。",
             "type": "string"
           },
           "canvas-id": {
@@ -1352,11 +1377,11 @@
             "tsType": "() => void"
           },
           "onLongTap": {
-            "description": "手指长按 500ms 之后触发，触发了长按事件后进行移动不会触发屏幕的滚动。",
+            "description": "手指长按350ms后触发长按事件，长按的时长超过500ms之后，移动不会触发屏幕的滚动。",
             "tsType": "() => void"
           },
           "onError": {
-            "description": "当发生错误时触发 error 事件，detail.errMsg。",
+            "description": "当发生错误时触发error事件，detail.errMsg。",
             "tsType": "() => void"
           }
         },
@@ -1382,7 +1407,7 @@
             "type": "eventhandler"
           },
           "onMessage": {
-            "description": "网页通过 postMessage 方法向元服务发送消息，会在特定时机（如：网页后退、组件销毁）触发并收到。e.detail = { data }，data 是多次 postMessage 的参数组成的数组。",
+            "description": "网页通过postMessage方法向元服务发送消息，会在特定时机（如：网页后退、组件销毁）触发并收到。e.detail = { data }，data 是多次 postMessage 的参数组成的数组。",
             "type": "eventhandler"
           }
         },
@@ -1397,13 +1422,13 @@
         "type": "object",
         "properties": {
           "latitude": {
-            "description": "中国大陆及港澳地区，请使用 gcj02，其他地区请使用 wgs84。",
-            "defaultValue": "39.9153935",
+            "description": "中心纬度。默认为天安门的纬度。说明： 中国大陆及港澳地区，请使用gcj02，其他地区请使用wgs84。",
+            "defaultValue": "39.908692",
             "type": "number"
           },
           "longitude": {
-            "description": "中心经度。默认为天安门的经度。中国大陆及港澳地区，请使用 gcj02，其他地区请使用 wgs84。",
-            "defaultValue": "116.4041457",
+            "description": "中心经度。默认为天安门的经度。说明： 中国大陆及港澳地区，请使用gcj02，其他地区请使用wgs84。",
+            "defaultValue": "116.397477",
             "type": "number"
           },
           "scale": {
@@ -1416,16 +1441,45 @@
             "type": "Array<marker>"
           },
           "circles": {
-            "description": "圆。",
+            "description": "圆，详见Circle说明。",
             "type": "Array<circle>"
           },
           "polyline": {
-            "description": "路线。",
+            "description": "路线，详见polyline说明。",
             "type": "Array<polyline>"
           },
           "show-location": {
-            "description": "显示当前定位点。",
-            "defaultValue": "FALSE",
+            "description": "是否显示当前定位点。",
+            "defaultValue": "false",
+            "type": "boolean"
+          },
+          "show-compass": {
+            "description": "是否显示指南针。起始版本： 1.0.18",
+            "defaultValue": "false",
+            "type": "boolean"
+          },
+          "enable-rotate": {
+            "description": "是否支持旋转。起始版本： 1.0.18",
+            "defaultValue": "false",
+            "type": "boolean"
+          },
+          "enable-scroll": {
+            "description": "是否支持拖动。起始版本： 1.0.18",
+            "defaultValue": "true",
+            "type": "boolean"
+          },
+          "enable-zoom": {
+            "description": "是否支持缩放。起始版本： 1.0.18",
+            "defaultValue": "true",
+            "type": "boolean"
+          },
+          "polygons": {
+            "description": "多边形，详见polygon说明。起始版本： 1.0.18",
+            "type": "Array<polygon>"
+          },
+          "enable-center-scale": {
+            "description": "指定中心点缩放地图。true表示使用组件中心点。false表示使用手势中心点。起始版本： 1.0.19",
+            "defaultValue": "false",
             "type": "boolean"
           },
           "onTap": {
@@ -1441,16 +1495,48 @@
             "tsType": "() => void"
           },
           "onRegionChange": {
-            "description": "当视野发生变化时触发。起始版本：1.0.8",
+            "description": "当视野发生变化时触发。起始版本： 1.0.8",
             "tsType": "() => void"
           },
           "onCalloutTap": {
-            "description": "点击标记点对应的气泡时触发，e.detail = {markerId}。起始版本：1.0.10",
+            "description": "点击标记点对应的气泡时触发，e.detail = {markerId}。起始版本： 1.0.10",
             "tsType": "() => void"
           }
         },
         "additionalProperties": false,
         "required": ["latitude", "longitude"]
+      }
+    },
+    {
+      "key": "open-embedded-atomicservice",
+      "value": {
+        "title": "open-embedded-atomicservice",
+        "type": "object",
+        "properties": {
+          "appid": {
+            "description": "需要半屏跳转的元服务的AppId参数。",
+            "type": "string"
+          },
+          "path": {
+            "description": "打开的页面路径。路径后可以带参数，参数与路径之间用?分隔，参数与键值用=相连，多个参数用&分隔。在元服务的App.onLaunch、App.onShow和Page.onLoad的回调函数中可以获得参数query。",
+            "type": "string"
+          },
+          "want-param": {
+            "description": "需要传递给目标元服务的数据。",
+            "type": "object"
+          },
+          "onTerminated": {
+            "description": "退出的回调事件。",
+            "tsType": "() => void"
+          },
+          "onError": {
+            "description": "异常的回调事件。",
+            "defaultValue": "否",
+            "tsType": "() => void"
+          }
+        },
+        "additionalProperties": false,
+        "required": ["appid"]
       }
     }
   ]

@@ -172,17 +172,17 @@ export default {
 | MapProps.controls | ✔️ | ✔️ | ✔️ |  |  | ✔️ |  |  |  |  |
 | MapProps.includePoints | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |  |  |  |
 | MapProps.showLocation | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |  |  | ✔️ |
-| MapProps.polygons | ✔️ | ✔️ |  | ✔️ | ✔️ |  |  |  |  |  |
+| MapProps.polygons | ✔️ | ✔️ |  | ✔️ | ✔️ |  |  |  |  | ✔️ |
 | MapProps.subkey | ✔️ |  |  |  | ✔️ |  |  |  |  |  |
 | MapProps.layerStyle | ✔️ |  |  |  | ✔️ |  |  |  |  |  |
 | MapProps.rotate | ✔️ |  | ✔️ | ✔️ | ✔️ |  |  |  |  |  |
 | MapProps.skew | ✔️ |  | ✔️ | ✔️ | ✔️ |  |  |  |  |  |
-| MapProps.showCompass | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |  |  |  |  |
+| MapProps.showCompass | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |  |  |  | ✔️ |
 | MapProps.showScale | ✔️ |  | ✔️ | ✔️ | ✔️ |  |  |  |  |  |
 | MapProps.enableOverlooking | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |  |  |  |  |
-| MapProps.enableZoom | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |  |  |  |  |
-| MapProps.enableScroll | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |  |  |  |  |
-| MapProps.enableRotate | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |  |  |  |  |
+| MapProps.enableZoom | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |  |  |  | ✔️ |
+| MapProps.enableScroll | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |  |  |  | ✔️ |
+| MapProps.enableRotate | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |  |  |  | ✔️ |
 | MapProps.enableSatellite | ✔️ |  | ✔️ | ✔️ | ✔️ |  |  |  |  |  |
 | MapProps.enableTraffic | ✔️ |  | ✔️ | ✔️ | ✔️ |  |  |  |  |  |
 | MapProps.setting | ✔️ |  | ✔️ |  | ✔️ |  |  |  |  |  |

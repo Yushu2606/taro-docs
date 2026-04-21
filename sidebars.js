@@ -321,6 +321,7 @@ module.exports = {
       'components/open/official-account',
       'components/open/open-data',
       'components/open/web-view',
+      'components/open/open-embedded-atomicservice',
       'components/open/others'
     ]
   },

@@ -36,7 +36,7 @@ ComponentType<CameraProps>
 | API | 微信小程序 | 百度小程序 | 支付宝小程序 | 抖音小程序 | QQ 小程序 | 京东小程序 | H5 | React Native | Harmony | ASCF元服务 |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
 | CameraProps.mode | ✔️ |  | ✔️ | ✔️ | ✔️ | ✔️ |  | ✔️ |  |  |
-| CameraProps.resolution | ✔️ |  |  | ✔️ |  |  |  |  |  |  |
+| CameraProps.resolution | ✔️ |  |  | ✔️ |  |  |  |  |  | ✔️ |
 | CameraProps.devicePosition | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  | ✔️ |  | ✔️ |
 | CameraProps.flash | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  | ✔️ |  | ✔️ |
 | CameraProps.frameSize | ✔️ |  | ✔️ | ✔️ |  |  |  |  |  |  |
